@@ -1,0 +1,7 @@
+<p>ability-list works!</p>
+<a [routerLink]="['/']">back</a>
+<ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let ability of abilityList.results">
+                <a [routerLink]="['/ability', ability.name]">{{ability.name}}</a>               
+        </li>
+    </ul>

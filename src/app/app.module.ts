@@ -10,6 +10,8 @@ import { SearchFormComponent } from './components/pokemon-search/search-form/sea
 import { SearchResultsComponent } from './components/pokemon-search/search-results/search-results.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { AbilityDetailComponent } from './components/ability-detail/ability-detail.component';
+import { AbilityListComponent } from './components/ability-list/ability-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
     SearchFormComponent,
     SearchResultsComponent,
     NotFoundComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    AbilityDetailComponent,
+    AbilityListComponent
   ],
   imports: [
     BrowserModule,

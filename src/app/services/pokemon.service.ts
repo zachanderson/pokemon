@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ISearchResponse, IPokemon } from '../interfaces/pokemon';
 import { tap } from 'rxjs/operators';
+import { IAbility  } from '../interfaces/ability';
 
 @Injectable({
   providedIn: 'root'
