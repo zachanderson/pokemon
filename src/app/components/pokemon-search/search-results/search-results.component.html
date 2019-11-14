@@ -1,0 +1,19 @@
+<div *ngIf="searchResponse$ | async as response">
+        <h2>Total Items: {{response.count}}</h2>
+        <ul>
+            <li *ngFor="let pokemon of response.results">
+                <a [routerLink]="['/pokemon', pokemon.id]">{{pokemon.name}}</a>
+            </li>
+        </ul>
+</div>
+
+<nav aria-label="Search Results">
+    <ul class="pagination">
+        <li *ngFor="let page of pageNumbers" 
+        class="page-item"         
+        [class.active]="page === currentPage"> 
+            <a *ngIf="page !== currentPage" class="page-link" href="#" (click)="pager(page)">{{page}}</a>
+            <span *ngIf="page === currentPage" class="page-link">{{page}}<span class="sr-only">(current)</span></span>
+        </li>     
+    </ul>
+</nav>

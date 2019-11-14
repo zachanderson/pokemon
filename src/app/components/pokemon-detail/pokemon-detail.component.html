@@ -1,0 +1,109 @@
+<h2><img src="{{pokemon.sprites.front_default}}"> {{pokemon.name}}</h2>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Species</strong>
+                {{pokemon.species.name}}
+            </li>
+            <li class="list-group-item">
+                <strong>Height</strong>
+                {{pokemon.height}}
+            </li>
+            <li class="list-group-item">
+                <strong>Weight</strong>
+                {{pokemon.weight}}
+            </li>
+             <li class="list-group-item">
+                <strong>Experience</strong>
+                {{pokemon.base_experience}}
+            </li>
+             <li class="list-group-item">
+                <strong>Encounters</strong>
+                {{pokemon.location_area_encounters}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-header">
+                Abilities
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let ability of pokemon.abilities">
+                        {{ability.ability.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Moves
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let move of pokemon.moves | slice:0:10">
+                        {{move.move.name}}
+                    </li>
+                    <li class="list-group-item">...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+                <div class="card-header">
+                    Forms
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let form of pokemon.forms | slice:0:10">
+                            {{form.name}}
+                        </li>
+                        <li class="list-group-item">...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                    <div class="card-header">
+                        Games
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let game of pokemon.game_indices | slice:0:10">
+                                    <strong>{{game.game_index}}</strong>
+                                    {{game.version.name}}
+                            </li>
+                            <li class="list-group-item">...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                        <div class="card-header">
+                            Stats
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" *ngFor="let stat of pokemon.stats">
+                                        <strong>{{stat.stat.name}}</strong>
+                                        {{stat.base_stat}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                
+
+</div>
+
+
+<!-- <pre>
+{{pokemon | json}}
+</pre> -->
+<hr>
+<a [routerLink]="['/']">back</a>
