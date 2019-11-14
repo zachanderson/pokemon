@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPokemon } from 'src/app/interfaces/pokemon';
+import { IPokemon } from '../../interfaces/pokemon';
 
 @Component({
   selector: 'app-pokemon-detail',

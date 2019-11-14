@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from 'src/app/services/pokemon.service';
-import { ISearchResponse } from 'src/app/interfaces/pokemon';
+import { PokemonService } from '../../../services/pokemon.service';
+import { ISearchResponse } from '../../../interfaces/pokemon';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
