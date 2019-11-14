@@ -12,7 +12,7 @@ export class PokemonDetailResolver implements Resolve<IPokemon>{
     constructor(private _pokemonService: PokemonService){}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IPokemon | Observable<IPokemon> | Promise<IPokemon> {
-        return this._pokemonService.getSingle(route.params.id);
+        return this._pokemonService.getSingle(route.params.name);
     }
 
 }    

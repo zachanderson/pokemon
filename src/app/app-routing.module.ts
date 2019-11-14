@@ -17,7 +17,7 @@ const routes: Routes = [{
   
   },
   {
-  path:'pokemon/:id',
+  path:'pokemon/:name',
   component: PokemonDetailComponent,
   resolve:
     {
