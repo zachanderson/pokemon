@@ -1,0 +1,6 @@
+<a href="javascript:void(0)" (click)="goBack()">back</a>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let move of moveList.results">
+            <a [routerLink]="['/move', move.name]">{{move.name}}</a>               
+    </li>
+</ul>

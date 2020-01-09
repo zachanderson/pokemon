@@ -8,6 +8,10 @@ import { AbilityDetailComponent } from './components/ability-detail/ability-deta
 import { AbilityListComponent } from './components/ability-list/ability-list.component';
 import { AbilityDetailResolver } from './helpers/ability-detail.resolver';
 import { AbilityListResolver } from './helpers/ability-list.resolver';
+import { MoveListResolver } from './helpers/move-list.resolver';
+import { MoveListComponent } from './components/move-list/move-list.component';
+import { MoveDetailComponent } from './components/move-detail/move-detail.component';
+import { MoveDetailResolver } from './helpers/move-detail.resolver';
 
 
 const routes: Routes = [{
@@ -40,6 +44,24 @@ const routes: Routes = [{
         abilityList: AbilityListResolver
       }
     },
+    {
+      path:'move/:name',
+      component: MoveDetailComponent,
+      resolve:
+        {
+          move: MoveDetailResolver
+        }
+      },
+
+      {
+        path:'move',
+        component: MoveListComponent,
+        resolve:
+          {
+            moveList: MoveListResolver
+          }
+        },
+
   {
     path:'**',
     component:NotFoundComponent

@@ -1,3 +1,74 @@
-<p>ability-detail works!</p>
-<a [routerLink]="['/']">back</a>
-{{ability.name}}
+
+<a href="javascript:void(0)" (click)="goBack()">back</a><br/>
+<a [routerLink]="'/ability'">view all abilities</a>
+
+
+<div class="card">
+    <div class="card-header">
+            {{ability.name}}
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Generation</strong>
+                {{ability.generation.name}}
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="card-deck">
+    <div class="card">
+        <div class="card-header">
+            Effects
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let effect of ability.effect_entries">
+                        {{effect.effect}} <br/>{{effect.short_effect}}
+                </li>
+            </ul>
+            <div *ngIf="ability.effect_changes.length>0">
+                Effect Changes
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let effectEntry of ability.effect_changes">
+                                Version:  {{effectEntry.version_group.name}}<br/>
+                                <ul>
+                                    <li *ngFor="let effect of effectEntry.effect_entries">
+                                        {{effect.effect}}
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="card-header">
+                Pokemon that have the {{ability.name}} ability
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let poke of ability.pokemon">
+                            <a [routerLink]="['/pokemon', poke.pokemon.name]">{{poke.pokemon.name}}</a>               
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+                <div class="card-header">
+                    Flavors
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let flavor of flavorTextEntries">
+                                Version:  {{flavor.version_group.name}}<br/>
+                            {{flavor.flavor_text}}
+                                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</div>

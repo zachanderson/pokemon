@@ -1,5 +1,10 @@
-<h2><img src="{{pokemon.sprites.front_default}}"> {{pokemon.name}}</h2>
-<a [routerLink]="['/']">back</a>
+<div class="d-flex flex-row justify-content-around align-items-stretch">
+        <h2><img src="{{pokemon.sprites.front_default}}"> {{pokemon.name}}</h2>
+    <div class="">species</div>
+    <div class="">abilities</div>
+</div>
+
+<a href="javascript:void(0)" (click)="goBack()">back</a>
 <div class="card">
     <div class="card-header">
     </div>
@@ -50,7 +55,7 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" *ngFor="let move of pokemon.moves | slice:0:10">
-                        {{move.move.name}}
+                            <a [routerLink]="['/move', move.move.name]">{{move.move.name}}</a>               
                     </li>
                     <li class="list-group-item">...</li>
                 </ul>
@@ -71,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <!-- <div class="card">
                     <div class="card-header">
                         Games
                     </div>
@@ -84,21 +89,21 @@
                             <li class="list-group-item">...</li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
-                        <div class="card-header">
+                    <div class="card-header">
                             Stats
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item" *ngFor="let stat of pokemon.stats">
-                                        <strong>{{stat.stat.name}}</strong>
-                                        {{stat.base_stat}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>                
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let stat of pokemon.stats">
+                                    <strong>{{stat.stat.name}}</strong>
+                                    {{stat.base_stat}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>                
 
 </div>
 

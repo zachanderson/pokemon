@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IAbility } from '../../interfaces/ability';
+import { IMove } from '../../interfaces/move';
 import { ISearchResponse } from '../../interfaces/pokemon';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-ability-list',
-  templateUrl: './ability-list.component.html',
-  styleUrls: ['./ability-list.component.scss']
+  selector: 'app-move-list',
+  templateUrl: './move-list.component.html',
+  styleUrls: ['./move-list.component.scss']
 })
-export class AbilityListComponent implements OnInit {
+export class MoveListComponent implements OnInit {
 
-  abilityList: ISearchResponse;
+  moveList: ISearchResponse;
 
   constructor(private _route: ActivatedRoute,
     private _location: Location) { }
 
   ngOnInit() {
-    this.abilityList = this._route.snapshot.data.abilityList;
+    this.moveList = this._route.snapshot.data.moveList;
   }
 
   goBack(){
     this._location.back();
   }
+
 }

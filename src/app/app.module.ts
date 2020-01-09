@@ -12,6 +12,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { AbilityDetailComponent } from './components/ability-detail/ability-detail.component';
 import { AbilityListComponent } from './components/ability-list/ability-list.component';
+import { MoveListComponent } from './components/move-list/move-list.component';
+import { MoveDetailComponent } from './components/move-detail/move-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AbilityListComponent } from './components/ability-list/ability-list.com
     NotFoundComponent,
     PokemonDetailComponent,
     AbilityDetailComponent,
-    AbilityListComponent
+    AbilityListComponent,
+    MoveListComponent,
+    MoveDetailComponent
   ],
   imports: [
     BrowserModule,

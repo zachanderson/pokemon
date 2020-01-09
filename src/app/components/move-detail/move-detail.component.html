@@ -1,0 +1,130 @@
+
+<a href="javascript:void(0)" (click)="goBack()">back</a><br/>
+<a [routerLink]="'/move'">view all moves</a>
+
+
+<div class="card">
+    <div class="card-header">
+            {{move.name}}
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Generation</strong>
+                {{move.generation.name}}
+            </li>
+            <li class="list-group-item">
+                <strong>Type</strong> TODO this is a good endpoint to explore
+                {{move.type.name}}
+            </li>
+            <li class="list-group-item">
+                <strong>Target</strong>
+                {{move.target.name}}
+            </li>
+            <li class="list-group-item">
+                <strong>Damage Class TODO, this to be a link to damage class data</strong>
+                {{move.damage_class.name}}
+            </li>
+            <li class="list-group-item">
+                <strong>Contest</strong>
+                {{move.contest_type.name}}
+            </li>
+            <li class="list-group-item">
+                    <strong>Accuracy</strong>
+                    {{move.accuracy}}
+                </li>                    
+        </ul>
+    </div>
+</div>
+<div class="card-deck">
+
+        <div class="card">
+                <div class="card-header">
+                    MEta
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Ailment</strong>
+                            {{move.meta.ailment.name}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ailment chance</strong>
+                            {{move.meta.ailment_change}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>category</strong>
+                            {{move.meta.category.name}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>drain</strong>
+                            {{move.meta.drain}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>flinch_chance</strong>
+                            {{move.meta.flinch_chance}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>healing</strong>
+                            {{move.meta.healing}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>max_hits</strong>
+                            {{move.meta.max_hits}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>min_turns</strong>
+                            {{move.meta.min_turns}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>stats chance</strong>
+                            {{move.meta.stat_chance}}
+                        </li>
+                    </ul>
+                       
+                </div>
+            </div>
+
+    <div class="card">
+        <div class="card-header">
+            Effects
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let effect of move.effect_entries">
+                        {{effect.effect}} <br/>{{effect.short_effect}}
+                </li>
+            </ul>
+            <div *ngIf="move.effect_changes.length>0">
+                Effect Changes
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let effectEntry of move.effect_changes">
+                                Version:  {{effectEntry.version_group.name}}<br/>
+                                <ul>
+                                    <li *ngFor="let effect of effectEntry.effect_entries">
+                                        {{effect.effect}}
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="card">
+                <div class="card-header">
+                    Flavors
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let flavor of flavorTextEntries">
+                                Version:  {{flavor.version_group.name}}<br/>
+                            {{flavor.flavor_text}}
+                                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</div>
